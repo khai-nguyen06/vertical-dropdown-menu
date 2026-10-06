@@ -1,0 +1,58 @@
+/* 1. Reset CSS cơ bản và đặt font chữ */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    padding: 30px;
+    background-color: #f4f4f4;
+}
+
+/* 2. Bỏ ký hiệu danh sách cho tất cả ul */
+ul {
+    list-style: none;
+}
+
+/* 3. Định dạng cho từng phần tử li chính */
+#menu ul li {
+    list-style: none;
+    position: relative; /* Cho phép menu con căn vị trí theo li này */
+    width: 120px;
+    height: 30px;
+    padding: 0 20px;
+    background-color: black;
+    line-height: 30px;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+}
+
+/* 4. Định dạng thẻ <a> bên trong li */
+#menu ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-size: 14px;
+}
+
+/* 5. Đổi màu nền khi di chuột (hover) vào li */
+#menu ul li:hover {
+    background-color: #444;
+}
+
+/* 6. Định dạng cho danh sách con (sub-menu) */
+#menu ul li ul.sub-menu {
+    position: absolute;
+    top: 0;
+    left: 160px; /* Căn góc trên trái của menu con (120px width + 2x20px padding) */
+    visibility: hidden; /* Ẩn menu con mặc định */
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+}
+
+/* 7. Hiển thị danh sách con khi hover vào li cha */
+#menu ul li:hover ul.sub-menu {
+    visibility: visible;
+    opacity: 1;
+}
